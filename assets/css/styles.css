@@ -5,8 +5,14 @@
   --prussian-blue: #023047ff;
   --selective-yellow: #ffb703ff;
   --tangerine: #fb8500ff;
+  --white: white;
 }
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* try to figure out how to have text decor on links */
+.page-links {
+  text-decoration: underline var(--blue-green);
 }

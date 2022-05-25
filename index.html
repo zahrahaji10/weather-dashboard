@@ -30,12 +30,23 @@
     <!-- author's CSS link -->
     <link href="./assets/css/styles.css" />
   </head>
+
   <body>
     <!-- header section containing navbar -->
     <header>
+      <!-- navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html">Weather Dashboard</a>
+          <!-- logo div -->
+          <div class="logo-div">
+            <a class="navbar-brand logo" href="./index.html">
+              <span class="logo-icon ps-2">
+                <i class="fa-solid fa-cloud-sun"></i>
+              </span>
+              <span class="logo-text ps-2"> Weather Dashboard </span>
+            </a>
+          </div>
+          <!-- toggle navbar links button -->
           <button
             class="navbar-toggler"
             type="button"
@@ -47,28 +58,32 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
+        </div>
+        <!-- div containing links -->
+        <div class="align-items-center">
+          <div id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="ps-3">
                 <a
-                  class="nav-link active"
+                  class="nav-link active page-links"
                   aria-current="page"
                   href="./index.html"
                   >Home</a
                 >
               </li>
-              <li class="nav-item">
+              <li class="ps-3 pe-3">
                 <a
-                  class="nav-link active"
+                  class="nav-link active page-links"
                   aria-current="page"
                   href="./journal.html"
-                  >My Journal</a
+                  >Journal</a
                 >
               </li>
             </ul>
           </div>
         </div>
       </nav>
+      d-flex justify-content-end ps-2
     </header>
 
     <!-- main section -->
