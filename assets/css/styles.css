@@ -12,14 +12,9 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-/* try to figure out how to have text decor on links */
-.page-links {
+/*~ try to figure out how to have text decor on links */
+/* .page-links {
   text-decoration: underline var(--blue-green);
-}
-
-/* .jumbotron {
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
-  background-color: #e9ecef;
-  border-radius: 0.3rem;
 } */
+
+/* apply banner styling - color of title etc */
