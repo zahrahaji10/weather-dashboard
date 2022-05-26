@@ -40,7 +40,8 @@
           <!-- logo div -->
           <div class="logo-div">
             <a class="navbar-brand logo" href="./index.html">
-            <i class="fa-solid fa-cloud-sun ps-2 pe-2"></i> Weather Dashboard </a>
+              <i class="fa-solid fa-cloud-sun ps-2 pe-2"></i> Weather Dashboard
+            </a>
           </div>
           <!-- toggle navbar links button -->
           <button
@@ -83,40 +84,61 @@
 
     <!-- main section -->
     <main>
-      <!-- div containing banner-->
-      <div class="bg-light p-5 rounded-lg text-center">
-        <h1 class="display-5 ">Weather Journal</h1>
-      <hr class="my-4 break-line" />
-        <p>
-          Useful application to ensure you are always up to date with weather conditions, to plan daily activities, trips and events. 
+      <!-- div containing bander -->
+        <div class="bg-light p-5 rounded-lg text-center">
+          <h1 class="display-5 ">Weather Journal</h1>
         </p>
-        <button class="btn btn-primary mt-1 " id="create-journal-btn"><i class="fa-solid fa-plus pe-2"></i>Create Journal</button>
-      </div>
-
+        <hr class="my-4 break-line" />
+        <p>
+          <p class=>
+            Useful application to ensure you are always up to date with weather conditions, to plan daily activities, trips and events. 
+          </p>
+          <button class="btn btn-primary mt-1 " id="create-journal-btn"><i class="fa-solid fa-plus pe-2"></i>Create Journal</button>
+        </div> 
+        
       <!-- main content div  -->
-      <div class="row">
+      <div class="row g-0">
         <!--  div containing form and recent search -->
         <div class="col-sm-12 col-md-3 border">
           <!--  form section -->
           <div class="form-div-container p-4">
+            <h4 class="text-center">
+              <i class="fa-solid fa-magnifying-glass pe-2"></i>Search Form
+            </h4>
+            <hr class="my-2" />
             <form>
-              <div class="mb-3 mt-1">
-                    <h4 ><i class="fa-solid fa-magnifying-glass pe-2"></i>Search Form </h4>
-                    <hr class="my-2" />
-                <input 
-                type="text" 
-                class="form-control mt-3" 
-                id="form-input"
-                placeholder= "Search City">
-                  <!-- submit form button --> 
-                  <div class="d-grid gap-2">
-                  <button class="btn btn-primary mt-3" id="submit-form-btn" type="button">Summit</button>
-                </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control mt-3"
+                  id="form-input"
+                  placeholder="Search City"
+                />
+              </div>
+              <!-- submit form button -->
+              <div class="d-grid gap-2">
+                <button
+                  class="btn btn-primary"
+                  id="submit-form-btn"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
             </form>
           </div>
-
-          <!--  recent search section -->
-          <div>search form</div>
+          <!-- Search section -->
+          <div class="search-history p-4">
+            <h4 class="text-center">Search History</h4>
+            <hr class="mt-2" />
+            <ul class="list-group">
+              <li class="list-group-item">An item</li>
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">A fourth item</li>
+              <li class="list-group-item">And a fifth one</li>
+            </ul>
+          </div>
         </div>
 
         <!-- div containing weather forecast section -->
