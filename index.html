@@ -86,10 +86,8 @@
       <!-- div containing banner-->
       <div class="bg-light p-5 rounded-lg text-center">
         <h1 class="display-5 ">Weather Journal</h1>
-      </p>
       <hr class="my-4 break-line" />
-      <p>
-        <p class=>
+        <p>
           Useful application to ensure you are always up to date with weather conditions, to plan daily activities, trips and events. 
         </p>
         <button class="btn btn-primary mt-1 " id="create-journal-btn"><i class="fa-solid fa-plus pe-2"></i>Create Journal</button>
@@ -100,7 +98,22 @@
         <!--  div containing form and recent search -->
         <div class="col-sm-12 col-md-3 border">
           <!--  form section -->
-          <div>form</div>
+          <div class="form-div-container p-4">
+            <form>
+              <div class="mb-3 mt-1">
+                    <h4 ><i class="fa-solid fa-magnifying-glass pe-2"></i>Search Form </h4>
+                    <hr class="my-2" />
+                <input 
+                type="text" 
+                class="form-control mt-3" 
+                id="form-input"
+                placeholder= "Search City">
+                  <!-- submit form button --> 
+                  <div class="d-grid gap-2">
+                  <button class="btn btn-primary mt-3" id="submit-form-btn" type="button">Summit</button>
+                </div>
+            </form>
+          </div>
 
           <!--  recent search section -->
           <div>search form</div>

@@ -8,7 +8,9 @@
   --white: white;
 }
 
-body {
+* {
+  margin: 0px;
+  box-sizing: border-box;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -17,12 +19,7 @@ body {
   text-decoration: underline var(--blue-green);
 } */
 
-/* apply banner styling - color of title etc */
-
-.banner {
+/*~ apply banner styling - color of title etc */
+/* .banner {
   margin-left: 20px;
-}
-
-/* padding: 2rem 1rem;
-  margin-bottom: 2rem;
-  border-radius: 0.3rem; */
+} */
