@@ -18,3 +18,11 @@ body {
 } */
 
 /* apply banner styling - color of title etc */
+
+.banner {
+  margin-left: 20px;
+}
+
+/* padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.3rem; */
