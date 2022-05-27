@@ -6,6 +6,8 @@
   --selective-yellow: #ffb703ff;
   --tangerine: #fb8500ff;
   --white: white;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
 }
 
 * {
@@ -23,3 +25,8 @@
 /* .banner {
   margin-left: 20px;
 } */
+
+/* ~ apply color to search history text*/
+.search-history {
+  color: var(--bs-gray-800);
+}
