@@ -30,3 +30,11 @@
 .search-history {
   color: var(--bs-gray-800);
 }
+
+/* ~apply light grey color to the weather info 2nd col section */
+
+/* ~ change size of card-img-top weather icon for each day of forecast */
+.card-img-top {
+  height: 120px;
+  width: 120px;
+}

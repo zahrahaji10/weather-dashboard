@@ -144,21 +144,42 @@
         <!-- div containing weather forecast section -->
         <div class="col-sm-12 col-md-9 border">
           <!-- current date section -->
-          <div>
-            <h2 class="city text-center">City</h2>
-            <h3 class="date text-center">Time</h3>
+          <div class="city-info div text-center  ">
+            <div>
+              <h2 class="searched-city mt-3">City</h2>
+              <h3 class="date">Time</h3>
+              <img 
+                src="http://openweathermap.org/img/w/04d.png"
+                alt="image of weather icon"
+              >
+          </div>
             
             <!-- weather info -->
-            <div class="row g-0 m-3">
-              <div class="col-sm-12 col-md-4 border p-1 px-3"> Temp </div> <div class="col-sm-12 col-md-8 p-1 px-3 border"> Degrees &deg;C </div>
-              <div class="col-sm-12 col-md-4 border p-1 px-3"> Humidity </div> <div class="col-sm-12 col-md-8 p-1 px-3 border"> 20 &percnt;</div>
-              <div class="col-sm-12 col-md-4 border p-1 px-3"> Wind Speed </div> <div class="col-sm-12 col-md-8 p-1 px-3 border"> 10 MPH </div>
-              <div class="col-sm-12 col-md-4 border p-1 px-3"> UV Index </div> <div class="col-sm-12 col-md-8 p-1 px-3 border"><span class="bg-success text-white px-2 rounded-1">1.5</span></div>
+            <div class="row g-0 m-5">
+              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold"> Temperature </div> <div class="col-sm-12 col-md-9 p-1 px-4 border"> Degrees &deg;C </div>
+              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold"> Humidity  </div> <div class="col-sm-12 col-md-9 p-1 px-4 border"> 20 &percnt;</div>
+              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold"> Wind Speed </div> <div class="col-sm-12 col-md-9 p-1 px-4 border"> 10 MPH </div>
+              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold"> UV Index  </div> <div class="col-sm-12 col-md-9 p-1 px-4 border"><span class="bg-success text-white px-2 rounded-1">1.5</span></div>
             </div>
           </div>
 
           <!-- searched forecast data section -->
-          <div>forecast data</div>
+          <div class="weather-card-container m-5"> 
+            <h4 class="weather-card-title text-center"> Forecast </h4>
+            <div class="card border" style="width: 15rem;">
+             <img 
+              class="card-img-top shadow-sm" 
+              src="http://openweathermap.org/img/w/04d.png" 
+              alt="weather">
+            <div class="card-body">
+              <h5 class="card-title text-center text-primary card-header border-0"> Day of week </h5>
+            </div>
+                 <div class="weather-col-container row g-0 m-2 mb-3">    
+                   <div class="col-6 bg-light px-1 fw-bold border"> Temperature </div> <div class="col-6 px-1 text-center border"> 23 &deg;C </div>
+                   <div class="col-6 bg-light px-1 fw-bold border"> Humidity  </div> <div class="col-6 px-1 text-center border"> 20 &percnt;</div>
+                   <div class="col-6 bg-light px-1 fw-bold border"> Wind Speed </div> <div class="col-6 px-1 text-center border"> 10 MPH </div>
+                </div>
+           </div>
         </div>
       </div>
     </main>
