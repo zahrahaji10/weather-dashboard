@@ -38,3 +38,16 @@
   height: 120px;
   width: 120px;
 }
+
+/* ~remove the line style from the cards and replace with class below of each-forecast-style */
+/* .each-forecast-card {
+  width: 16rem;
+} */
+
+/* mobile responsive */
+
+@media screen and (max-width: 576px) {
+  .each-forecast-card {
+    width: 100%;
+  }
+}
