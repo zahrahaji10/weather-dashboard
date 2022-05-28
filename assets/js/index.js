@@ -38,10 +38,17 @@ const renderRecentSearch = () => {
 // fn to handle clicks on search history section
 
 const searchHistoryClicks = (event) => {
-  console.log("clicked");
+  // target the event that triggered event
+  const target = $(event.target);
+  //limit the click event to li only using conditional statement
+  if (target.is("li")) {
+    //   if li is clicked get the data  city attribute
+    const CityName = target.attr("data-city");
+    console.log(CityName);
+  }
 };
 
-// first - \fn called on document load
+// first - fn called on document load
 const onLoad = () => {
   // calling fn to render searches on page
   renderRecentSearch();
