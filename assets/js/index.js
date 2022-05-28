@@ -1,5 +1,5 @@
 // ~ DECLARATIONS
-const recentSearchesContainer = $("#recent-searches");
+const recentSearchesContainer = $("#recent-search");
 
 //~ UTILITY FUNCTIONS
 // Local Storage (LS) function
@@ -27,12 +27,18 @@ const renderRecentSearch = () => {
     // if there is recent search display searches
   } else {
     // if there are no searches render an alert
-    const noSearchAlert = `<div class="alert alert-dark" role="alert">
+    const noSearchAlert = `<div class="alert alert-dark text-center mt-2 p-2" role="alert">
         You have no search history
     </div>`;
     //append alert to parent div (recent search container)
     $("#recent-searches").append(noSearchAlert);
   }
+};
+
+// fn to handle clicks on search history section
+
+const searchHistoryClicks = (event) => {
+  console.log("clicked");
 };
 
 // first - \fn called on document load
@@ -41,5 +47,8 @@ const onLoad = () => {
   renderRecentSearch();
 };
 
-// add on ready event listener for document using jquery
+// event listener for recent search history list
+recentSearchesContainer.click(searchHistoryClicks);
+
+// on ready event listener for document using jquery
 $(document).ready(onLoad);
