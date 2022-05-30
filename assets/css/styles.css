@@ -28,8 +28,12 @@
 
 /* ~ apply color to search history text*/
 .search-history {
-  color: var(--bs-gray-800);
+  color: red;
 }
+
+/* .recent-search: {
+  background-color: #343a40;
+} */
 
 /* ~apply light grey color to the weather info 2nd col section */
 
@@ -37,6 +41,10 @@
 .card-img-top {
   height: 120px;
   width: 120px;
+}
+
+.weather-card {
+  width: 16rem;
 }
 
 /* ~remove the line style from the cards and replace with class below of each-forecast-style */
@@ -48,6 +56,10 @@
 
 @media screen and (max-width: 576px) {
   .each-forecast-card {
+    width: 100%;
+  }
+
+  .weather-card {
     width: 100%;
   }
 }

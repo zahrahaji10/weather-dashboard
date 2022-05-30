@@ -24,12 +24,13 @@ const readFromLocalStorage = (key, defaultValue) => {
 const renderRecentSearch = () => {
   //target recent searches in HTML
   // get data from LS after page load - parse data to LS
-  const recentSearches = readFromLocalStorage("recentSearches", []);
+  //   const recentSearches = readFromLocalStorage("recentSearches", []);
+  const recentSearches = ["london", "leeds"];
   // conditional statement for
   if (recentSearches.length) {
     // fn to append each city into recent search section
     const createSearchedCities = (city) => {
-      return `<li class="list-group-item rounded" data-city="${city}">${city}</li>`;
+      return `<li class="list-group-item rounded recent-search" data-city="${city}">${city}</li>`;
     };
     // map through recent search for each city
     const recentCities = recentSearches.map(createSearchedCities).join("");
@@ -54,6 +55,9 @@ const searchHistoryClicks = (event) => {
   const target = $(event.target);
   //limit the click event to li only using conditional statement
   if (target.is("li")) {
+    $(".list-group>li.active").removeClass("active");
+
+    target.toggleClass("active");
     //   if li is clicked get the data  city attribute
     const CityName = target.attr("data-city");
   }
@@ -62,7 +66,6 @@ const searchHistoryClicks = (event) => {
 const handleFormSubmit = (event) => {
   // prevent url form default
   event.preventDefault();
-  console.log("submitted");
 };
 
 // first - fn called on document load

@@ -28,7 +28,7 @@
       referrerpolicy="no-referrer"
     />
     <!-- author's CSS link -->
-    <link href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
 
   <body>
@@ -130,7 +130,7 @@
           </div>
           <!-- Search section -->
           <div class="search-history p-4" id="recent-search">
-            <h4 class="text-center">Search History</h4>
+            <h4 class="text-center search-history">Search History</h4>
             <hr class="mt-2" />
             <!-- recent searches rendered in js using memory of searches in local storage -->
           </div>
@@ -183,9 +183,9 @@
             class="weather-card-container m-3 d-flex flex-row flex-wrap justify-content-center"
           >
             <!-- card one -->
-            <div class="card border m-2" style="width: 16rem">
+            <div class="card border m-2 weather-card">
               <img
-                class="card-img-top shadow-sm"
+                class="card-img-top shadow-sm mx-auto"
                 src="http://openweathermap.org/img/w/04d.png"
                 alt="weather"
               />
