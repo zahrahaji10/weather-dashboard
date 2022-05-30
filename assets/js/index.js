@@ -1,4 +1,6 @@
 // ~ DECLARATIONS
+const searchFormTextArea = $("#form-input");
+const submitBnt = $("#submit-form-btn");
 const recentSearchesContainer = $("#recent-search");
 
 //~ UTILITY FUNCTIONS
@@ -55,13 +57,20 @@ const searchHistoryClicks = (event) => {
     const CityName = target.attr("data-city");
   }
 };
+const handleFormSubmit = (event) => {
+  // prevent url form default
+  event.preventDefault();
+  console.log("submitted");
+};
 
 // first - fn called on document load
 const onLoad = () => {
   // calling fn to render searches on page
   renderRecentSearch();
-  // calling fn to set search class as active on click
 };
+
+// submit event handler for search form text box
+submitBnt.on("submit", handleFormSubmit);
 
 // event listener for recent search history list
 recentSearchesContainer.click(searchHistoryClicks);
