@@ -21,16 +21,21 @@ const readFromLocalStorage = (key, defaultValue) => {
 const renderRecentSearch = () => {
   //target recent searches in HTML
   // get data from LS after page load - parse data to LS
-  const recentSearches = readFromLocalStorage("recentSearches", []);
+  const recentSearches = ["london", "leeds", "sun"];
+
   // conditional statement for
   if (recentSearches.length) {
-    // if there is recent search display searches
-    const searches = `<ul class="list-group" >
-        <li class="list-group-item rounded" data-city="Birmingham">Birmingham</li>
-        <li class="list-group-item rounded" data-city="London">London</li >
-    </ul>`;
-    // append recent searches list
-    recentSearchesContainer.append(searches);
+    // fn to append each city into recent search section
+    const createSearchedCities = (city) => {
+      return `<li class="list-group-item rounded" data-city="${city}">${city}</li>`;
+    };
+    // map through recent search for each city
+    const recentCities = recentSearches.map(createSearchedCities).join("");
+    console.log(recentCities);
+    // then add each city to recent history list section
+    const list = ` <ul class="list-group" > ${recentCities}</ul>`;
+    // then append to the recent searches container
+    recentSearchesContainer.append(list);
   } else {
     // if there are no searches render an alert
     const noSearchAlert = `<div class="alert alert-dark text-center mt-2 p-1" role="alert">
@@ -40,14 +45,6 @@ const renderRecentSearch = () => {
     recentSearchesContainer.append(noSearchAlert);
   }
 };
-
-// fn to change li to active when clicked
-// const isActive = () => {
-//   //  target the li item that is clicked
-//   const clickedCitySearch = document.querySelector(recentSearchesContainer);
-//   //  add a class
-//   console.log(clickedCitySearch);
-//};
 
 // fn to handle clicks on search history section
 const searchHistoryClicks = (event) => {
