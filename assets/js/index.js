@@ -21,8 +21,7 @@ const readFromLocalStorage = (key, defaultValue) => {
 const renderRecentSearch = () => {
   //target recent searches in HTML
   // get data from LS after page load - parse data to LS
-  const recentSearches = ["london", "leeds", "sun"];
-
+  const recentSearches = readFromLocalStorage("recentSearches", []);
   // conditional statement for
   if (recentSearches.length) {
     // fn to append each city into recent search section
