@@ -1,6 +1,7 @@
 // ~ DECLARATIONS
 const searchFormTextArea = $("#form-input");
-const submitBnt = $("#submit-form-btn");
+const submitBtn = $("#submit-form-btn");
+const searchForm = $("#search-form");
 const recentSearchesContainer = $("#recent-search");
 
 //~ UTILITY FUNCTIONS
@@ -57,6 +58,7 @@ const searchHistoryClicks = (event) => {
     const CityName = target.attr("data-city");
   }
 };
+
 const handleFormSubmit = (event) => {
   // prevent url form default
   event.preventDefault();
@@ -69,11 +71,11 @@ const onLoad = () => {
   renderRecentSearch();
 };
 
+// on ready event listener for document using jquery
+$(document).ready(onLoad);
+
 // submit event handler for search form text box
-submitBnt.on("submit", handleFormSubmit);
+searchForm.submit(handleFormSubmit);
 
 // event listener for recent search history list
 recentSearchesContainer.click(searchHistoryClicks);
-
-// on ready event listener for document using jquery
-$(document).ready(onLoad);

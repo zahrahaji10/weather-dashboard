@@ -85,17 +85,18 @@
     <!-- main section -->
     <main>
       <!-- div containing bander -->
-        <div class="bg-light p-5 rounded-lg text-center">
-          <h1 class="display-5 ">Weather Journal</h1>
-        </p>
+      <div class="bg-light p-5 rounded-lg text-center">
+        <h1 class="display-5">Weather Journal</h1>
         <hr class="my-4 break-line" />
         <p>
-          <p class=>
-            Useful application to help you stay up to date with the weather conditions to plan daily activities, trips and events. 
-          </p> 
-          <button class="btn btn-primary mt-1 " id="create-journal-btn"><i class="fa-solid fa-plus pe-2"></i>Create Journal</button>
-        </div> 
-        
+          Useful application to help you stay up to date with the weather
+          conditions to plan daily activities, trips and events.
+        </p>
+        <button class="btn btn-primary mt-1" id="create-journal-btn">
+          <i class="fa-solid fa-plus pe-2"></i>Create Journal
+        </button>
+      </div>
+
       <!-- main content div  -->
       <div class="row g-0">
         <!--  div containing form and recent search -->
@@ -106,7 +107,7 @@
               <i class="fa-solid fa-magnifying-glass pe-2"></i>Search Form
             </h4>
             <hr class="my-2" />
-            <form>
+            <form id="search-form">
               <div class="mb-3">
                 <input
                   type="text"
@@ -118,7 +119,7 @@
               <!-- submit form button -->
               <div class="d-grid gap-2">
                 <button
-                  id="submit-form-btn" 
+                  id="submit-form-btn"
                   class="btn btn-primary"
                   type="submit"
                 >
@@ -130,114 +131,85 @@
           <!-- Search section -->
           <div class="search-history p-4" id="recent-search">
             <h4 class="text-center">Search History</h4>
-            <hr class="mt-2"/>
-              <!-- recent searches rendered in js using memory of searches in local storage -->
+            <hr class="mt-2" />
+            <!-- recent searches rendered in js using memory of searches in local storage -->
           </div>
         </div>
 
         <!-- div containing weather forecast section -->
         <div class="col-sm-12 col-md-9 border">
           <!-- current date section -->
-          <div class="city-info div text-center  ">
+          <div class="city-info div text-center">
             <div>
               <h2 class="searched-city mt-3">City</h2>
               <h3 class="date">Time</h3>
-              <img 
+              <img
                 src="http://openweathermap.org/img/w/04d.png"
                 alt="image of weather icon"
-              >
-          </div>
-            
+              />
+            </div>
+
             <!-- weather info -->
             <div class="row g-0 m-5">
-              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold"> Temperature </div> <div class="col-sm-12 col-md-9 p-1 px-4 border"> Degrees &deg;C </div>
-              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold"> Humidity  </div> <div class="col-sm-12 col-md-9 p-1 px-4 border"> 20 &percnt;</div>
-              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold"> Wind Speed </div> <div class="col-sm-12 col-md-9 p-1 px-4 border"> 10 MPH </div>
-              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold"> UV Index  </div> <div class="col-sm-12 col-md-9 p-1 px-4 border"><span class="bg-success text-white px-2 rounded-1">1.5</span></div>
+              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
+                Temperature
+              </div>
+              <div class="col-sm-12 col-md-9 p-1 px-4 border">
+                Degrees &deg;C
+              </div>
+              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
+                Humidity
+              </div>
+              <div class="col-sm-12 col-md-9 p-1 px-4 border">20 &percnt;</div>
+              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
+                Wind Speed
+              </div>
+              <div class="col-sm-12 col-md-9 p-1 px-4 border">10 MPH</div>
+              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
+                UV Index
+              </div>
+              <div class="col-sm-12 col-md-9 p-1 px-4 border">
+                <span class="bg-success text-white px-2 rounded-1">1.5</span>
+              </div>
             </div>
           </div>
 
           <!-- searched forecast data section -->
 
-          <h4 class="weather-card-title text-center"> Forecast </h4>
+          <h4 class="weather-card-title text-center">Forecast</h4>
           <hr class="my-2" />
           <!-- weather card container -->
-          <div class="weather-card-container m-3 d-flex flex-row flex-wrap justify-content-center "> 
+          <div
+            class="weather-card-container m-3 d-flex flex-row flex-wrap justify-content-center"
+          >
             <!-- card one -->
-            <div class="card border m-2" style="width: 16rem;">
-             <img 
-              class="card-img-top shadow-sm" 
-              src="http://openweathermap.org/img/w/04d.png" 
-              alt="weather">
-            <div class="card-body">
-              <h5 class="card-title text-center text-secondary card-header border-0"> Day of week </h5>
+            <div class="card border m-2" style="width: 16rem">
+              <img
+                class="card-img-top shadow-sm"
+                src="http://openweathermap.org/img/w/04d.png"
+                alt="weather"
+              />
+              <div class="card-body">
+                <h5
+                  class="card-title text-center text-secondary card-header border-0"
+                >
+                  Day of week
+                </h5>
+              </div>
+              <div class="weather-col-container row g-0 m-1 mb-3">
+                <div class="col-6 bg-light px-1 fw-bold border">
+                  Temperature
+                </div>
+                <div class="col-6 px-1 text-center border">23 &deg;C</div>
+                <div class="col-6 bg-light px-1 fw-bold border">Humidity</div>
+                <div class="col-6 px-1 text-center border">20 &percnt;</div>
+                <div class="col-6 bg-light px-1 fw-bold border">Wind Speed</div>
+                <div class="col-6 px-1 text-center border">10 MPH</div>
+                <button class="btn btn-primary mt-3">
+                  <i class="fa-solid fa-bookmark px-2"></i>Save
+                </button>
+              </div>
             </div>
-                 <div class="weather-col-container row g-0 m-1 mb-3 ">    
-                   <div class="col-6 bg-light px-1 fw-bold border"> Temperature </div> <div class="col-6 px-1 text-center border"> 23 &deg;C </div>
-                   <div class="col-6 bg-light px-1 fw-bold border"> Humidity  </div> <div class="col-6 px-1 text-center border"> 20 &percnt;</div>
-                   <div class="col-6 bg-light px-1 fw-bold border"> Wind Speed </div> <div class="col-6 px-1 text-center border"> 10 MPH </div>
-                   <button class="btn btn-primary mt-3"><i class="fa-solid fa-bookmark px-2"></i>Save</button>
-                 </div>
-           </div>
-           <div class="card border m-2" style="width: 16rem;">
-            <img 
-             class="card-img-top shadow-sm" 
-             src="http://openweathermap.org/img/w/04d.png" 
-             alt="weather">
-           <div class="card-body ">
-             <h5 class="card-title text-center text-secondary card-header border-0"> Day of week </h5>
-           </div>
-                <div class="weather-col-container row g-0 m-1 mb-3">    
-                  <div class="col-6 bg-light px-1 fw-bold border"> Temperature </div> <div class="col-6 px-1 text-center border"> 23 &deg;C </div>
-                  <div class="col-6 bg-light px-1 fw-bold border"> Humidity  </div> <div class="col-6 px-1 text-center border"> 20 &percnt;</div>
-                  <div class="col-6 bg-light px-1 fw-bold border"> Wind Speed </div> <div class="col-6 px-1 text-center border"> 10 MPH </div>
-                  <button class="btn btn-primary mt-3"><i class="fa-solid fa-bookmark px-2"></i>Save</button>
-                </div>
-          </div>
-          <div class="card border m-2 each-forecast-card" style="width: 16rem;">
-            <img 
-             class="card-img-top shadow-sm" 
-             src="http://openweathermap.org/img/w/04d.png" 
-             alt="weather">
-           <div class="card-body">
-             <h5 class="card-title text-center text-secondary card-header border-0"> Day of week </h5>
-           </div>
-                <div class="weather-col-container row g-0 m-1 mb-3">    
-                  <div class="col-6 bg-light px-1 fw-bold border"> Temperature </div> <div class="col-6 px-1 text-center border"> 23 &deg;C </div>
-                  <div class="col-6 bg-light px-1 fw-bold border"> Humidity  </div> <div class="col-6 px-1 text-center border"> 20 &percnt;</div>
-                  <div class="col-6 bg-light px-1 fw-bold border"> Wind Speed </div> <div class="col-6 px-1 text-center border"> 10 MPH </div>
-                  <button class="btn btn-primary mt-3"><i class="fa-solid fa-bookmark px-2"></i>Save</button>
-                </div>
-          </div>
-          <div class="card border m-2" style="width: 16rem;">
-            <img 
-             class="card-img-top shadow-sm" 
-             src="http://openweathermap.org/img/w/04d.png" 
-             alt="weather">
-           <div class="card-body">
-             <h5 class="card-title text-center text-secondary card-header border-0"> Day of week </h5>
-           </div>
-                <div class="weather-col-container row g-0 m-1 mb-3">    
-                  <div class="col-6 bg-light px-1 fw-bold border"> Temperature </div> <div class="col-6 px-1 text-center border"> 23 &deg;C </div>
-                  <div class="col-6 bg-light px-1 fw-bold border"> Humidity  </div> <div class="col-6 px-1 text-center border"> 20 &percnt;</div>
-                  <div class="col-6 bg-light px-1 fw-bold border"> Wind Speed </div> <div class="col-6 px-1 text-center border"> 10 MPH </div>
-                  <button class="btn btn-primary mt-3"><i class="fa-solid fa-bookmark px-2"></i>Save</button>
-                </div>
-          </div>
-          <div class="card border m-2" style="width: 16rem;">
-            <img 
-             class="card-img-top shadow-sm" 
-             src="http://openweathermap.org/img/w/04d.png" 
-             alt="weather">
-           <div class="card-body">
-             <h5 class="card-title text-center text-secondary card-header border-0"> Day of week </h5>
-           </div>
-                <div class="weather-col-container row g-0 m-1 mb-3">    
-                  <div class="col-6 bg-light px-1 fw-bold border"> Temperature </div> <div class="col-6 px-1 text-center border"> 23 &deg;C </div>
-                  <div class="col-6 bg-light px-1 fw-bold border"> Humidity  </div> <div class="col-6 px-1 text-center border"> 20 &percnt;</div>
-                  <div class="col-6 bg-light px-1 fw-bold border"> Wind Speed </div> <div class="col-6 px-1 text-center border"> 10 MPH </div>
-                  <button class="btn btn-primary mt-3"><i class="fa-solid fa-bookmark px-2"></i>Save</button>
-                </div>
           </div>
         </div>
       </div>
