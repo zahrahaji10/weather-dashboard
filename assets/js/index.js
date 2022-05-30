@@ -25,18 +25,31 @@ const renderRecentSearch = () => {
   // conditional statement for
   if (recentSearches.length) {
     // if there is recent search display searches
+    const searches = `<ul class="list-group" >
+        <li class="list-group-item rounded" data-city="Birmingham">Birmingham</li>
+        <li class="list-group-item rounded" data-city="London">London</li >
+    </ul>`;
+    // append recent searches list
+    recentSearchesContainer.append(searches);
   } else {
     // if there are no searches render an alert
-    const noSearchAlert = `<div class="alert alert-dark text-center mt-2 p-2" role="alert">
+    const noSearchAlert = `<div class="alert alert-dark text-center mt-2 p-1" role="alert">
         You have no search history
     </div>`;
     //append alert to parent div (recent search container)
-    $("#recent-searches").append(noSearchAlert);
+    recentSearchesContainer.append(noSearchAlert);
   }
 };
 
-// fn to handle clicks on search history section
+// fn to change li to active when clicked
+// const isActive = () => {
+//   //  target the li item that is clicked
+//   const clickedCitySearch = document.querySelector(recentSearchesContainer);
+//   //  add a class
+//   console.log(clickedCitySearch);
+//};
 
+// fn to handle clicks on search history section
 const searchHistoryClicks = (event) => {
   // target the event that triggered event
   const target = $(event.target);
@@ -44,7 +57,6 @@ const searchHistoryClicks = (event) => {
   if (target.is("li")) {
     //   if li is clicked get the data  city attribute
     const CityName = target.attr("data-city");
-    console.log(CityName);
   }
 };
 
@@ -52,6 +64,7 @@ const searchHistoryClicks = (event) => {
 const onLoad = () => {
   // calling fn to render searches on page
   renderRecentSearch();
+  // calling fn to set search class as active on click
 };
 
 // event listener for recent search history list
