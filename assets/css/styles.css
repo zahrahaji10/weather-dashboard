@@ -7,15 +7,21 @@
   --tangerine: #fb8500ff;
   --white: white;
   --bs-gray-700: #495057;
+  --bs-gray-500: #adb5bd;
   --bs-gray-800: #343a40;
+  --bs-gray-300: #dee2e6;
+  --black: black;
+  --red: red;
+  --green: green;
 }
 
 * {
   margin: 0px;
   box-sizing: border-box;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
+/* navbar styling */
 .home-page-link {
   margin-right: 30px;
 }
@@ -25,19 +31,35 @@
   color: var(--light-cornflower-blue);
 }
 
-/*~ apply banner styling - color of title etc */
-/* .banner {
-  margin-left: 20px;
-} */
+/* banner styling */
+.weather-title {
+  color: var(--prussian-blue);
+}
 
-/* ~ apply color to search history text*/
+.info {
+  color: var(--bs-gray-700);
+  background-color: var(--bs-gray-300);
+  display: inline-block;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 27px;
+}
+
+/* search area styling*/
+.list-group-item:hover {
+  background-color: var(--bs-gray-500);
+}
 .search-history {
   color: var(--bs-gray-700);
 }
 
-/* ~apply light grey color to the weather info 2nd col section */
+/* main weather card styling */
+.main-icon-img {
+  height: 100px;
+  width: 100px;
+}
 
-/* ~ change size of card-img-top weather icon for each day of forecast */
+/* weather cards image styling */
 .card-img-top {
   height: 120px;
   width: 120px;
@@ -47,22 +69,17 @@
   width: 14rem;
 }
 
-/* ~remove the line style from the cards and replace with class below of each-forecast-style */
-/* .each-forecast-card {
-  width: 16rem;
-} */
-
 /* render color based on UVI value  */
 .low {
-  color: green;
+  color: var(--green);
 }
 
 .moderate {
-  color: yellow;
+  color: var(--selective-yellow);
 }
 
 .high {
-  color: red;
+  color: var(--red);
 }
 
 /* mobile responsive */

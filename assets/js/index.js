@@ -105,11 +105,12 @@ const renderCurrentDate = (data) => {
   // display HTML using js of weather card
   const mainWeatherCard = `<div class="city-info div text-center">
     <div>
-        <h2 class="searched-city mt-3">${data.cityName}</h2>
-        <h3 class="date">${moment
+        <h2 class="searched-city mt-3 fw-bold">${data.cityName}</h2>
+        <h3 class="date fw-bold">${moment
           .unix(1654007160)
           .format("dddd MMMM Do YYYY")}</h3>
         <img
+        class="main-icon-img"
         src="http://openweathermap.org/img/w/${
           data.weatherDataInfo.current.weather[0].icon
         }.png"
