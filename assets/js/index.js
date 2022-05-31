@@ -3,6 +3,7 @@ const searchFormTextArea = $("#form-input");
 const submitBtn = $("#submit-form-btn");
 const searchForm = $("#search-form");
 const recentSearchesContainer = $("#recent-search");
+const weatherInfoContainer = $("#weather-info-container");
 
 //~ UTILITY FUNCTIONS
 // read to LS fn
@@ -35,7 +36,41 @@ const writeToLocalStorage = (key, value) => {
 // fn to render current date using moment js
 const renderCurrentDate = () => {
   // display HTML using js of weather card
-  const mainWeatherCard = ``;
+  const mainWeatherCard = `<div class="city-info div text-center">
+    <div>
+        <h2 class="searched-city mt-3">City</h2>
+        <h3 class="date">Time</h3>
+        <img
+        src="http://openweathermap.org/img/w/04d.png"
+        alt="image of weather icon"
+        />
+    </div>
+    
+    <div class="row g-0 m-5">
+        <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
+        Temperature
+        </div>
+        <div class="col-sm-12 col-md-9 p-1 px-4 border">
+        Degrees &deg;C
+        </div>
+        <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
+        Humidity
+        </div>
+        <div class="col-sm-12 col-md-9 p-1 px-4 border">20 &percnt;</div>
+        <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
+        Wind Speed
+        </div>
+        <div class="col-sm-12 col-md-9 p-1 px-4 border">10 MPH</div>
+        <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
+        UV Index
+        </div>
+        <div class="col-sm-12 col-md-9 p-1 px-4 border">
+        <span class="bg-success text-white px-2 rounded-1">1.5</span>
+        </div>
+    </div>
+    </div>`;
+  // append weather card to main container
+  weatherInfoContainer.append(mainWeatherCard);
 };
 
 // second - fn to render recent search on page after load
@@ -86,6 +121,10 @@ const handleFormSubmit = (event) => {
   const cityName = $("#form-input").val();
   // validate input
   if (cityName) {
+    // fetch data from API
+    // render current data
+    // call fn to render for current data
+    renderCurrentDate();
     // get searches from LS
     const recentCitySearched = readFromLocalStorage("recentSearches", []);
     // push city to array

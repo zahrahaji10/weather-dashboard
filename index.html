@@ -126,45 +126,11 @@
         </div>
 
         <!-- div containing weather forecast section -->
-        <div class="col-sm-12 col-md-9 border">
-          <!-- current date section -->
-          <div class="city-info div text-center">
-            <div>
-              <h2 class="searched-city mt-3">City</h2>
-              <h3 class="date">Time</h3>
-              <img
-                src="http://openweathermap.org/img/w/04d.png"
-                alt="image of weather icon"
-              />
-            </div>
 
-            <!-- weather info -->
-            <div class="row g-0 m-5">
-              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
-                Temperature
-              </div>
-              <div class="col-sm-12 col-md-9 p-1 px-4 border">
-                Degrees &deg;C
-              </div>
-              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
-                Humidity
-              </div>
-              <div class="col-sm-12 col-md-9 p-1 px-4 border">20 &percnt;</div>
-              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
-                Wind Speed
-              </div>
-              <div class="col-sm-12 col-md-9 p-1 px-4 border">10 MPH</div>
-              <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
-                UV Index
-              </div>
-              <div class="col-sm-12 col-md-9 p-1 px-4 border">
-                <span class="bg-success text-white px-2 rounded-1">1.5</span>
-              </div>
-            </div>
-          </div>
+        <div class="col-sm-12 col-md-9 border" id="weather-info-container">
+          <!-- current date section rendered in js -->
 
           <!-- searched forecast data section -->
-
           <h4 class="weather-card-title text-center">Forecast</h4>
           <hr class="my-2" />
           <!-- weather card container -->
