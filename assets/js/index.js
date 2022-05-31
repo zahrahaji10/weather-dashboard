@@ -30,6 +30,14 @@ const writeToLocalStorage = (key, value) => {
   localStorage.setItem(key, stringifiedValue);
 };
 
+// FUNCTIONS
+
+// fn to render current date using moment js
+const renderCurrentDate = () => {
+  // display HTML using js of weather card
+  const mainWeatherCard = ``;
+};
+
 // second - fn to render recent search on page after load
 const renderRecentSearch = () => {
   //target recent searches in HTML

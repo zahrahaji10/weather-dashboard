@@ -16,8 +16,13 @@
   font-family: "Roboto Condensed", sans-serif;
 }
 
-.page-links {
+.home-page-link {
+  margin-right: 30px;
+}
+
+.home-page-link:hover {
   text-decoration: overline;
+  color: var(--light-cornflower-blue);
 }
 
 /*~ apply banner styling - color of title etc */
@@ -29,10 +34,6 @@
 .search-history {
   color: var(--bs-gray-700);
 }
-
-/* .recent-search: {
-  background-color: #343a40;
-} */
 
 /* ~apply light grey color to the weather info 2nd col section */
 
