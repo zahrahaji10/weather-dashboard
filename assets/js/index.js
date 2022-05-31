@@ -54,7 +54,7 @@ const fetchData = async (url, options = {}) => {
 };
 
 // fn to render current date
-const renderCurrentDate = () => {
+const renderCurrentDate = (data) => {
   // display HTML using js of weather card
   const mainWeatherCard = `<div class="city-info div text-center">
     <div>
@@ -279,7 +279,7 @@ const handleFormSubmit = async (event) => {
   const cityName = $("#form-input").val();
   // validate input
   if (cityName) {
-    // get url from weather API
+    // get url from current weather data API
     const currentDataUrl = constructUrl(
       "https://api.openweathermap.org/data/2.5/weather",
       {
@@ -289,6 +289,12 @@ const handleFormSubmit = async (event) => {
     );
     // fetch data from API
     const currentWeatherDate = await fetchData(currentDataUrl);
+    //  from api get city name, lat and long
+    const searchedCityName = currentWeatherDate?.name;
+    const lat = currentWeatherDate?.coord?.lat;
+    const lon = currentWeatherDate?.coord?.lon;
+    console.log(searchedCityName, lat, lon);
+
     // call fn to render for current data
     renderCurrentDate();
     // render forecast data
