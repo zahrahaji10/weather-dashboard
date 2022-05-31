@@ -52,6 +52,19 @@
   width: 16rem;
 } */
 
+/* render color based on UVI value  */
+.low {
+  color: green;
+}
+
+.moderate {
+  color: yellow;
+}
+
+.high {
+  color: red;
+}
+
 /* mobile responsive */
 
 @media screen and (max-width: 576px) {

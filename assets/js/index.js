@@ -95,6 +95,13 @@ const fetchWeatherData = async (cityName) => {
 
 // fn to render current date
 const renderCurrentDate = (data) => {
+  const uvIndicatorColor =
+    data.weatherDataInfo.current.uvi < 2
+      ? "low"
+      : data.weatherDataInfo.current.uvi > 2 &&
+        data.weatherDataInfo.current.uvi < 8
+      ? "moderate"
+      : "high";
   // display HTML using js of weather card
   const mainWeatherCard = `<div class="city-info div text-center">
     <div>
@@ -134,9 +141,9 @@ const renderCurrentDate = (data) => {
         UV Index
         </div>
         <div class="col-sm-12 col-md-9 p-1 px-4 border">
-        <span class="bg-success text-white px-2 rounded-1">${
-          data.weatherDataInfo.current.uvi
-        }</span>
+        <span class="px-2 rounded-1 ${uvIndicatorColor}">${
+    data.weatherDataInfo.current.uvi
+  }</span>
         </div>
     </div>
     </div>`;
@@ -148,6 +155,8 @@ const renderCurrentDate = (data) => {
 const renderWeatherForecast = (data) => {
   // display forecast on page
   const createEachWeatherCard = (each) => {
+    const uvIndicatorColor =
+      each.uvi < 2 ? "low" : each.uvi > 2 && each.uvi < 8 ? "moderate" : "high";
     const eachWeatherForestCard = `<div class="card border m-2 weather-card">
       <img
           class="card-img-top shadow-sm mx-auto mt-2"
@@ -176,7 +185,9 @@ const renderWeatherForecast = (data) => {
             each.wind_speed
           } MPH</div>
           <div class="col-6 bg-light px-1 fw-bold border">UV Index</div>
-          <div class="col-6 px-1 text-center border">${each.uvi} </div>
+          <div class="col-6 px-1 text-center border ${uvIndicatorColor}">${
+      each.uvi
+    } </div>
       </div>
       </div>`;
 
