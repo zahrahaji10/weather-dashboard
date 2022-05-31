@@ -90,8 +90,6 @@ const fetchWeatherData = async (cityName) => {
     cityName: searchedCityName,
     weatherDataInfo: forestWeatherDate,
   };
-
-  console.log();
 };
 
 // fn to render current date
@@ -101,9 +99,13 @@ const renderCurrentDate = (data) => {
   const mainWeatherCard = `<div class="city-info div text-center">
     <div>
         <h2 class="searched-city mt-3">${data.cityName}</h2>
-        <h3 class="date">Time</h3>
+        <h3 class="date">${moment
+          .unix(1654007160)
+          .format("dddd MMMM Do YYYY")}</h3>
         <img
-        src="http://openweathermap.org/img/w/04d.png"
+        src="http://openweathermap.org/img/w/${
+          data.weatherDataInfo.current.weather[0].icon
+        }.png"
         alt="image of weather icon"
         />
     </div>
@@ -113,21 +115,28 @@ const renderCurrentDate = (data) => {
         Temperature
         </div>
         <div class="col-sm-12 col-md-9 p-1 px-4 border">
-        ${""}&deg;C
+        ${data.weatherDataInfo.current.temp}&deg;C
         </div>
         <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
         Humidity
         </div>
-        <div class="col-sm-12 col-md-9 p-1 px-4 border">${""}&percnt;</div>
+        <div class="col-sm-12 col-md-9 p-1 px-4 border">${
+          data.weatherDataInfo.current.humidity
+        }&percnt;
+        </div>
         <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
         Wind Speed
         </div>
-        <div class="col-sm-12 col-md-9 p-1 px-4 border">10 MPH</div>
+        <div class="col-sm-12 col-md-9 p-1 px-4 border">${
+          data.weatherDataInfo.current.wind_speed
+        } MPH</div>
         <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
-        UV Index ${""}
+        UV Index
         </div>
         <div class="col-sm-12 col-md-9 p-1 px-4 border">
-        <span class="bg-success text-white px-2 rounded-1">${""}</span>
+        <span class="bg-success text-white px-2 rounded-1">${
+          data.weatherDataInfo.current.uvi
+        }</span>
         </div>
     </div>
     </div>`;
@@ -138,7 +147,7 @@ const renderCurrentDate = (data) => {
 //fn to render weather forecast
 const renderWeatherForecast = () => {
   // display forecast on page
-  const weatherForecastCards = ` <h4 class="weather-card-title text-center">Forecast</h4>
+  const weatherForecastCards = `<h4 class="weather-card-title text-center">Forecast</h4>
     <hr class="my-2" />
     <!-- weather card container -->
     <div
