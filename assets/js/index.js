@@ -8,7 +8,6 @@ const weatherInfoContainer = $("#weather-info-container");
 //~ UTILITY FUNCTIONS
 // read to LS fn
 const readFromLocalStorage = (key, defaultValue) => {
-  console.log("read from LS");
   // get from LS using key name
   const dataFromLS = localStorage.getItem(key);
 
@@ -24,7 +23,6 @@ const readFromLocalStorage = (key, defaultValue) => {
 
 // write to LS fn
 const writeToLocalStorage = (key, value) => {
-  console.log("write from LS");
   // convert value to string
   const stringifiedValue = JSON.stringify(value);
   // set stringified value to LS for key name
@@ -32,6 +30,28 @@ const writeToLocalStorage = (key, value) => {
 };
 
 // FUNCTIONS
+
+// functions to get weather info from API
+const constructUrl = (baseUrl, params) => {
+  const queryParams = new URLSearchParams(params).toString();
+
+  return queryParams ? `${baseUrl}?${queryParams}` : baseUrl;
+};
+
+const fetchData = async (url, options = {}) => {
+  try {
+    const response = await fetch(url, options);
+
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    } else {
+      throw new Error("Failed to fetch data");
+    }
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
 
 // fn to render current date
 const renderCurrentDate = () => {
@@ -252,14 +272,23 @@ const searchHistoryClicks = (event) => {
   }
 };
 
-const handleFormSubmit = (event) => {
+const handleFormSubmit = async (event) => {
   // prevent url form default
   event.preventDefault();
   // get input from form
   const cityName = $("#form-input").val();
   // validate input
   if (cityName) {
+    // get url from weather API
+    const currentDataUrl = constructUrl(
+      "https://api.openweathermap.org/data/2.5/weather",
+      {
+        q: cityName,
+        appid: "8109f605d79877f7488a194794a29013",
+      }
+    );
     // fetch data from API
+    const currentWeatherDate = await fetchData(currentDataUrl);
     // call fn to render for current data
     renderCurrentDate();
     // render forecast data
