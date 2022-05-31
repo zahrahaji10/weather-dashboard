@@ -69,6 +69,7 @@ const fetchWeatherData = async (cityName) => {
   const searchedCityName = currentWeatherDate?.name;
   const lat = currentWeatherDate?.coord?.lat;
   const lon = currentWeatherDate?.coord?.lon;
+  console.log(currentWeatherDate);
 
   // get url from forecast data API
   const forecastDataUrl = constructUrl(
@@ -76,19 +77,21 @@ const fetchWeatherData = async (cityName) => {
     {
       lat: lat,
       lon: lon,
-      exclude: "current,minutely,hourly",
+      exclude: "minutely,hourly",
       units: "metric",
       appid: "8109f605d79877f7488a194794a29013",
     }
   );
 
   // fetch data from forecast API
-  const currentForestDate = await fetchData(forecastDataUrl);
+  const forestWeatherDate = await fetchData(forecastDataUrl);
 
   return {
     cityName: searchedCityName,
-    dailyWeatherData: currentForestDate,
+    weatherDataInfo: forestWeatherDate,
   };
+
+  console.log();
 };
 
 // fn to render current date
@@ -110,21 +113,21 @@ const renderCurrentDate = (data) => {
         Temperature
         </div>
         <div class="col-sm-12 col-md-9 p-1 px-4 border">
-        Degrees &deg;C
+        ${""}&deg;C
         </div>
         <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
         Humidity
         </div>
-        <div class="col-sm-12 col-md-9 p-1 px-4 border">20 &percnt;</div>
+        <div class="col-sm-12 col-md-9 p-1 px-4 border">${""}&percnt;</div>
         <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
         Wind Speed
         </div>
         <div class="col-sm-12 col-md-9 p-1 px-4 border">10 MPH</div>
         <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
-        UV Index
+        UV Index ${""}
         </div>
         <div class="col-sm-12 col-md-9 p-1 px-4 border">
-        <span class="bg-success text-white px-2 rounded-1">1.5</span>
+        <span class="bg-success text-white px-2 rounded-1">${""}</span>
         </div>
     </div>
     </div>`;
