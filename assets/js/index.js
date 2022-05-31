@@ -221,22 +221,25 @@ const renderRecentSearch = () => {
 };
 
 // fn to handle clicks on search history section
-const searchHistoryClicks = (event) => {
+const searchHistoryClicks = async (event) => {
   // target the event that triggered event
   const target = $(event.target);
   //limit the click event to li only using conditional statement
   if (target.is("li")) {
-    $(".list-group>li.active").removeClass("active");
-
-    target.toggleClass("active");
     //   if li is clicked get the data city attribute
-    const CityName = target.attr("data-city");
+    const cityName = target.attr("data-city");
+    // add active class
+    $(".list-group>li.active").removeClass("active");
+    target.toggleClass("active");
+    await renderWeatherInfo(cityName);
   }
 };
 
 const renderWeatherInfo = async (cityName) => {
   //call fn to fetch weather data
   const displayWeatherData = await fetchWeatherData(cityName);
+  //empty the weather forecast from previous search
+  weatherInfoContainer.empty();
   // call fn to render for current data
   renderCurrentDate(displayWeatherData);
   // render daily forecast data
@@ -254,14 +257,17 @@ const handleFormSubmit = (event) => {
     renderWeatherInfo(cityName);
     // get searches from LS
     const recentCitySearched = readFromLocalStorage("recentSearches", []);
-    // push city to array
-    recentCitySearched.push(cityName);
-    // remove previous alert
-    recentSearchesContainer.children().last().remove();
-    // write searches to LS
-    writeToLocalStorage("recentSearches", recentCitySearched);
-    // render recent searched cities
-    renderRecentSearch();
+
+    if (!recentCitySearched.includes(cityName)) {
+      // push city to array
+      recentCitySearched.push(cityName);
+      // remove previous alert
+      recentSearchesContainer.children().last().remove();
+      // write searches to LS
+      writeToLocalStorage("recentSearches", recentCitySearched);
+      // render recent searched cities
+      renderRecentSearch();
+    }
   }
 };
 
