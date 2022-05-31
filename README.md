@@ -6,7 +6,7 @@ Useful application to help you stay up to date with the weather conditions to pl
 
 ## Deployed application Links
 
-GitHub repository:
+GitHub repository: https://zahrahaji10.github.io/weather-dashboard/
 git
 GitHub url:https://github.com/zahrahaji10/weather-dashboard/tree/dev
 
