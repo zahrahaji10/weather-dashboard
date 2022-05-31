@@ -13,13 +13,12 @@
 * {
   margin: 0px;
   box-sizing: border-box;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
-/*~ try to figure out how to have text decor on links */
-/* .page-links {
-  text-decoration: underline var(--blue-green);
-} */
+.page-links {
+  text-decoration: overline;
+}
 
 /*~ apply banner styling - color of title etc */
 /* .banner {
@@ -28,7 +27,7 @@
 
 /* ~ apply color to search history text*/
 .search-history {
-  color: red;
+  color: var(--bs-gray-700);
 }
 
 /* .recent-search: {

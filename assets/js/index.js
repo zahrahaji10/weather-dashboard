@@ -5,8 +5,9 @@ const searchForm = $("#search-form");
 const recentSearchesContainer = $("#recent-search");
 
 //~ UTILITY FUNCTIONS
-// Local Storage (LS) function
+// read to LS fn
 const readFromLocalStorage = (key, defaultValue) => {
+  console.log("read from LS");
   // get from LS using key name
   const dataFromLS = localStorage.getItem(key);
 
@@ -20,12 +21,20 @@ const readFromLocalStorage = (key, defaultValue) => {
   }
 };
 
+// write to LS fn
+const writeToLocalStorage = (key, value) => {
+  console.log("write from LS");
+  // convert value to string
+  const stringifiedValue = JSON.stringify(value);
+  // set stringified value to LS for key name
+  localStorage.setItem(key, stringifiedValue);
+};
+
 // second - fn to render recent search on page after load
 const renderRecentSearch = () => {
   //target recent searches in HTML
   // get data from LS after page load - parse data to LS
-  //   const recentSearches = readFromLocalStorage("recentSearches", []);
-  const recentSearches = ["london", "leeds"];
+  const recentSearches = readFromLocalStorage("recentSearches", []);
   // conditional statement for
   if (recentSearches.length) {
     // fn to append each city into recent search section
@@ -34,9 +43,8 @@ const renderRecentSearch = () => {
     };
     // map through recent search for each city
     const recentCities = recentSearches.map(createSearchedCities).join("");
-    console.log(recentCities);
     // then add each city to recent history list section
-    const list = ` <ul class="list-group" > ${recentCities}</ul>`;
+    const list = ` <ul class="list-group"> ${recentCities}</ul>`;
     // then append to the recent searches container
     recentSearchesContainer.append(list);
   } else {
@@ -58,7 +66,7 @@ const searchHistoryClicks = (event) => {
     $(".list-group>li.active").removeClass("active");
 
     target.toggleClass("active");
-    //   if li is clicked get the data  city attribute
+    //   if li is clicked get the data city attribute
     const CityName = target.attr("data-city");
   }
 };
@@ -66,6 +74,21 @@ const searchHistoryClicks = (event) => {
 const handleFormSubmit = (event) => {
   // prevent url form default
   event.preventDefault();
+  // get input from form
+  const cityName = $("#form-input").val();
+  // validate input
+  if (cityName) {
+    // get searches from LS
+    const recentCitySearched = readFromLocalStorage("recentSearches", []);
+    // push city to array
+    recentCitySearched.push(cityName);
+    // remove previous alert
+    recentSearchesContainer.children().last().remove();
+    // write searches to LS
+    writeToLocalStorage("recentSearches", recentCitySearched);
+    // render recent searched cities
+    renderRecentSearch();
+  }
 };
 
 // first - fn called on document load
