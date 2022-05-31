@@ -4,6 +4,7 @@ const submitBtn = $("#submit-form-btn");
 const searchForm = $("#search-form");
 const recentSearchesContainer = $("#recent-search");
 const weatherInfoContainer = $("#weather-info-container");
+const displayAlertMessage = $("#alert-danger");
 
 //~ UTILITY FUNCTIONS
 // read to LS fn
@@ -44,6 +45,7 @@ const fetchData = async (url, options = {}) => {
 
     if (response.ok) {
       const data = await response.json();
+
       return data;
     } else {
       throw new Error("Failed to fetch data");
@@ -235,18 +237,36 @@ const searchHistoryClicks = async (event) => {
   }
 };
 
-const renderWeatherInfo = async (cityName) => {
-  //call fn to fetch weather data
-  const displayWeatherData = await fetchWeatherData(cityName);
-  //empty the weather forecast from previous search
-  weatherInfoContainer.empty();
-  // call fn to render for current data
-  renderCurrentDate(displayWeatherData);
-  // render daily forecast data
-  renderWeatherForecast(displayWeatherData);
+const displayAlert = () => {
+  // remove any alert messages
+  weatherInfoContainer.empty(displayAlertMessage);
+  const alertMessage = `<div class="alert alert-danger mt-2 text-center" id="alert-message" role="alert">
+   Invalid input, please enter a city
+  </div>`;
+  // append message on to main weather container
+  weatherInfoContainer.append(alertMessage);
 };
 
-const handleFormSubmit = (event) => {
+const renderWeatherInfo = async (cityName) => {
+  try {
+    //call fn to fetch weather data
+    const displayWeatherData = await fetchWeatherData(cityName);
+    //empty the weather forecast from previous search
+    weatherInfoContainer.empty();
+    // call fn to render for current data
+    renderCurrentDate(displayWeatherData);
+    // render daily forecast data
+    renderWeatherForecast(displayWeatherData);
+    // return true if data is available for inputted value
+    return true;
+  } catch (error) {
+    displayAlert();
+    // return false if data does not exist
+    return false;
+  }
+};
+
+const handleFormSubmit = async (event) => {
   // prevent url form default
   event.preventDefault();
   // get input from form
@@ -254,19 +274,22 @@ const handleFormSubmit = (event) => {
   // validate input
   if (cityName) {
     // render weather cards after search
-    renderWeatherInfo(cityName);
-    // get searches from LS
-    const recentCitySearched = readFromLocalStorage("recentSearches", []);
+    const validateCityName = await renderWeatherInfo(cityName);
+    console.log(validateCityName);
+    if (validateCityName === true) {
+      // get searches from LS
+      const recentCitySearched = readFromLocalStorage("recentSearches", []);
 
-    if (!recentCitySearched.includes(cityName)) {
-      // push city to array
-      recentCitySearched.push(cityName);
-      // remove previous alert
-      recentSearchesContainer.children().last().remove();
-      // write searches to LS
-      writeToLocalStorage("recentSearches", recentCitySearched);
-      // render recent searched cities
-      renderRecentSearch();
+      if (!recentCitySearched.includes(cityName)) {
+        // push city to array
+        recentCitySearched.push(cityName);
+        // remove previous alert
+        recentSearchesContainer.children().last().remove();
+        // write searches to LS
+        writeToLocalStorage("recentSearches", recentCitySearched);
+        // render recent searched cities
+        renderRecentSearch();
+      }
     }
   }
 };
