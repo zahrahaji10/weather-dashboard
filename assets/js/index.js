@@ -53,12 +53,51 @@ const fetchData = async (url, options = {}) => {
   }
 };
 
+// fn to fetch weather data
+const fetchWeatherData = async (cityName) => {
+  // get url from current weather data API
+  const currentDataUrl = constructUrl(
+    "https://api.openweathermap.org/data/2.5/weather",
+    {
+      q: cityName,
+      appid: "8109f605d79877f7488a194794a29013",
+    }
+  );
+  // fetch data from current data API
+  const currentWeatherDate = await fetchData(currentDataUrl);
+  //  from api get city name, lat and long
+  const searchedCityName = currentWeatherDate?.name;
+  const lat = currentWeatherDate?.coord?.lat;
+  const lon = currentWeatherDate?.coord?.lon;
+
+  // get url from forecast data API
+  const forecastDataUrl = constructUrl(
+    "https://api.openweathermap.org/data/2.5/onecall",
+    {
+      lat: lat,
+      lon: lon,
+      exclude: "current,minutely,hourly",
+      units: "metric",
+      appid: "8109f605d79877f7488a194794a29013",
+    }
+  );
+
+  // fetch data from forecast API
+  const currentForestDate = await fetchData(forecastDataUrl);
+
+  return {
+    cityName: searchedCityName,
+    dailyWeatherData: currentForestDate,
+  };
+};
+
 // fn to render current date
 const renderCurrentDate = (data) => {
+  console.log(data);
   // display HTML using js of weather card
   const mainWeatherCard = `<div class="city-info div text-center">
     <div>
-        <h2 class="searched-city mt-3">City</h2>
+        <h2 class="searched-city mt-3">${data.cityName}</h2>
         <h3 class="date">Time</h3>
         <img
         src="http://openweathermap.org/img/w/04d.png"
@@ -279,26 +318,12 @@ const handleFormSubmit = async (event) => {
   const cityName = $("#form-input").val();
   // validate input
   if (cityName) {
-    // get url from current weather data API
-    const currentDataUrl = constructUrl(
-      "https://api.openweathermap.org/data/2.5/weather",
-      {
-        q: cityName,
-        appid: "8109f605d79877f7488a194794a29013",
-      }
-    );
-    // fetch data from API
-    const currentWeatherDate = await fetchData(currentDataUrl);
-    //  from api get city name, lat and long
-    const searchedCityName = currentWeatherDate?.name;
-    const lat = currentWeatherDate?.coord?.lat;
-    const lon = currentWeatherDate?.coord?.lon;
-    console.log(searchedCityName, lat, lon);
-
+    //call fn to fetch weather data
+    const displayWeatherData = await fetchWeatherData(cityName);
     // call fn to render for current data
-    renderCurrentDate();
-    // render forecast data
-    renderWeatherForecast();
+    renderCurrentDate(displayWeatherData);
+    // render daily forecast data
+    renderWeatherForecast(displayWeatherData);
     // get searches from LS
     const recentCitySearched = readFromLocalStorage("recentSearches", []);
     // push city to array
