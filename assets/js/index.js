@@ -33,7 +33,7 @@ const writeToLocalStorage = (key, value) => {
 
 // FUNCTIONS
 
-// fn to render current date using moment js
+// fn to render current date
 const renderCurrentDate = () => {
   // display HTML using js of weather card
   const mainWeatherCard = `<div class="city-info div text-center">
@@ -45,7 +45,7 @@ const renderCurrentDate = () => {
         alt="image of weather icon"
         />
     </div>
-    
+
     <div class="row g-0 m-5">
         <div class="col-sm-12 col-md-3 border p-1 px-3 bg-light fw-bold">
         Temperature
@@ -71,6 +71,144 @@ const renderCurrentDate = () => {
     </div>`;
   // append weather card to main container
   weatherInfoContainer.append(mainWeatherCard);
+};
+
+//fn to render weather forecast
+const renderWeatherForecast = () => {
+  // display forecast on page
+  const weatherForecastCards = ` <h4 class="weather-card-title text-center">Forecast</h4>
+    <hr class="my-2" />
+    <!-- weather card container -->
+    <div
+        class="weather-card-container m-3 d-flex flex-row flex-wrap justify-content-center"
+    >
+        <div class="card border m-2 weather-card">
+        <img
+            class="card-img-top shadow-sm mx-auto mt-2"
+            src="http://openweathermap.org/img/w/04d.png"
+            alt="weather"
+        />
+        <div class="card-body">
+            <h5
+            class="card-title text-center text-secondary card-header border-0"
+            >
+            Day of week
+            </h5>
+        </div>
+        <div class="weather-col-container row g-0 m-1 mb-3">
+            <div class="col-6 bg-light px-1 fw-bold border">
+            Temperature
+            </div>
+            <div class="col-6 px-1 text-center border">23 &deg;C</div>
+            <div class="col-6 bg-light px-1 fw-bold border">Humidity</div>
+            <div class="col-6 px-1 text-center border">20 &percnt;</div>
+            <div class="col-6 bg-light px-1 fw-bold border">Wind Speed</div>
+            <div class="col-6 px-1 text-center border">10 MPH</div>
+        </div>
+        </div>
+
+        <div class="card border m-2 weather-card">
+        <img
+            class="card-img-top shadow-sm mx-auto mt-2"
+            src="http://openweathermap.org/img/w/04d.png"
+            alt="weather"
+        />
+        <div class="card-body">
+            <h5
+            class="card-title text-center text-secondary card-header border-0"
+            >
+            Day of week
+            </h5>
+        </div>
+        <div class="weather-col-container row g-0 m-1 mb-3">
+            <div class="col-6 bg-light px-1 fw-bold border">
+            Temperature
+            </div>
+            <div class="col-6 px-1 text-center border">23 &deg;C</div>
+            <div class="col-6 bg-light px-1 fw-bold border">Humidity</div>
+            <div class="col-6 px-1 text-center border">20 &percnt;</div>
+            <div class="col-6 bg-light px-1 fw-bold border">Wind Speed</div>
+            <div class="col-6 px-1 text-center border">10 MPH</div>
+        </div>
+        </div>
+
+        <div class="card border m-2 weather-card">
+        <img
+            class="card-img-top shadow-sm mx-auto mt-2"
+            src="http://openweathermap.org/img/w/04d.png"
+            alt="weather"
+        />
+        <div class="card-body">
+            <h5
+            class="card-title text-center text-secondary card-header border-0"
+            >
+            Day of week
+            </h5>
+        </div>
+        <div class="weather-col-container row g-0 m-1 mb-3">
+            <div class="col-6 bg-light px-1 fw-bold border">
+            Temperature
+            </div>
+            <div class="col-6 px-1 text-center border">23 &deg;C</div>
+            <div class="col-6 bg-light px-1 fw-bold border">Humidity</div>
+            <div class="col-6 px-1 text-center border">20 &percnt;</div>
+            <div class="col-6 bg-light px-1 fw-bold border">Wind Speed</div>
+            <div class="col-6 px-1 text-center border">10 MPH</div>
+        </div>
+        </div>
+
+        <div class="card border m-2 weather-card">
+        <img
+            class="card-img-top shadow-sm mx-auto mt-2"
+            src="http://openweathermap.org/img/w/04d.png"
+            alt="weather"
+        />
+        <div class="card-body">
+            <h5
+            class="card-title text-center text-secondary card-header border-0"
+            >
+            Day of week
+            </h5>
+        </div>
+        <div class="weather-col-container row g-0 m-1 mb-3">
+            <div class="col-6 bg-light px-1 fw-bold border">
+            Temperature
+            </div>
+            <div class="col-6 px-1 text-center border">23 &deg;C</div>
+            <div class="col-6 bg-light px-1 fw-bold border">Humidity</div>
+            <div class="col-6 px-1 text-center border">20 &percnt;</div>
+            <div class="col-6 bg-light px-1 fw-bold border">Wind Speed</div>
+            <div class="col-6 px-1 text-center border">10 MPH</div>
+        </div>
+        </div>
+
+        <div class="card border m-2 weather-card">
+        <img
+            class="card-img-top shadow-sm mx-auto mt-2"
+            src="http://openweathermap.org/img/w/04d.png"
+            alt="weather"
+        />
+        <div class="card-body">
+            <h5
+            class="card-title text-center text-secondary card-header border-0"
+            >
+            Day of week
+            </h5>
+        </div>
+        <div class="weather-col-container row g-0 m-1 mb-3">
+            <div class="col-6 bg-light px-1 fw-bold border">
+            Temperature
+            </div>
+            <div class="col-6 px-1 text-center border">23 &deg;C</div>
+            <div class="col-6 bg-light px-1 fw-bold border">Humidity</div>
+            <div class="col-6 px-1 text-center border">20 &percnt;</div>
+            <div class="col-6 bg-light px-1 fw-bold border">Wind Speed</div>
+            <div class="col-6 px-1 text-center border">10 MPH</div>
+        </div>
+        </div>
+    </div>`;
+  // append weather cards
+  weatherInfoContainer.append(weatherForecastCards);
 };
 
 // second - fn to render recent search on page after load
@@ -122,9 +260,10 @@ const handleFormSubmit = (event) => {
   // validate input
   if (cityName) {
     // fetch data from API
-    // render current data
     // call fn to render for current data
     renderCurrentDate();
+    // render forecast data
+    renderWeatherForecast();
     // get searches from LS
     const recentCitySearched = readFromLocalStorage("recentSearches", []);
     // push city to array
