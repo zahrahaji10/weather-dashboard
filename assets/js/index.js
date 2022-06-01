@@ -107,7 +107,7 @@ const renderCurrentDate = (data) => {
     <div>
         <h2 class="searched-city mt-3 fw-bold">${data.cityName}</h2>
         <h3 class="date fw-bold">${moment
-          .unix(1654007160)
+          .unix(data.weatherDataInfo.current.dt)
           .format("dddd MMMM Do YYYY")}</h3>
         <img
         class="main-icon-img"
@@ -154,6 +154,7 @@ const renderCurrentDate = (data) => {
 
 //fn to render weather forecast
 const renderWeatherForecast = (data) => {
+  console.log(data);
   // display forecast on page
   const createEachWeatherCard = (each) => {
     const uvIndicatorColor =
