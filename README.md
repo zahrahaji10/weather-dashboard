@@ -50,3 +50,7 @@ When I search a city that does not exist:
 - HTML
 - CSS
 - JavaScript
+
+## Contact Me 
+Email: zahrahhaji10@gmail.com
+linketon: [Click Here](https://www.linkedin.com/in/zahra-haji/)
