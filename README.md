@@ -15,10 +15,9 @@ Useful application to help you stay up to date with the weather conditions to pl
 
 ## Deployed application Links
 
-```
 GitHub repository: https://zahrahaji10.github.io/weather-dashboard/
-GitHub url:https://github.com/zahrahaji10/weather-dashboard
-```
+GitHub url: https://github.com/zahrahaji10/weather-dashboard
+
 
 ## Architectural Diagram
 
