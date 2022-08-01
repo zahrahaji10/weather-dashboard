@@ -1,14 +1,24 @@
 # Weather Dashboard
 
+## Table of Content
+
+- [Description](#description)
+- [Deployment](#deployment)
+- [Application Diagram](#application-diagram)
+- [User Journey](#user-journey)
+- [Technologies](#technologies)
+- [Questions](#questions)
+
 ## Application Description
 
 Useful application to help you stay up to date with the weather conditions to plan daily activities, trips and events.
 
 ## Deployed application Links
 
-GitHub repository: https://zahrahaji10.github.io/weather-dashboard/
-git
+```
+GitHub repository: https://zahrahaji10.github.io/weather-dashboard/git
 GitHub url:https://github.com/zahrahaji10/weather-dashboard/tree/dev
+```
 
 ## Architectural Diagram
 
@@ -28,28 +38,26 @@ WHEN I view future weather conditions for that city:
 
 - I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
 
-<img width="712" alt="daily" src="https://user-images.githubusercontent.com/102627226/171294553-7712ea1e-1f85-41e6-af9e-8778e535e5ea.png">
+<img  width="986" alt="daily" src="https://user-images.githubusercontent.com/102627226/171294553-7712ea1e-1f85-41e6-af9e-8778e535e5ea.png">
 
 When I search a city that does not exist:
 
 - I am presented with an alert message to insert a city name to get results.
 
-<img width="960" alt="alert" src="https://user-images.githubusercontent.com/102627226/171295239-68ce113b-b854-4931-b7a5-b371094b80d6.png">
+<img width="986" alt="alert" src="https://user-images.githubusercontent.com/102627226/171295239-68ce113b-b854-4931-b7a5-b371094b80d6.png">
 
-## Resources
+## Technologies 
 
 - Moment.js
+- Open Weather Map API
+- JavaScript
 - Font Awesome
 - coolors
 - Bootstrap
 - Google Fonts
-- Open Weather Map API
-
-## Technologies
-
 - HTML
 - CSS
-- JavaScript
+
 
 ## Contact Me 
 Email: zahrahhaji10@gmail.com
