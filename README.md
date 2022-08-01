@@ -22,7 +22,7 @@ GitHub url:https://github.com/zahrahaji10/weather-dashboard/tree/dev
 
 ## Architectural Diagram
 
-<img width="434" alt="a-d" src="https://user-images.githubusercontent.com/102627226/171294329-0d28bf60-971e-4c64-af72-55c73d863679.png">
+<img width="986" alt="a-d" src="https://user-images.githubusercontent.com/102627226/171294329-0d28bf60-971e-4c64-af72-55c73d863679.png">
 
 ## User Journey
 
@@ -60,5 +60,8 @@ When I search a city that does not exist:
 
 
 ## Contact Me 
+
+For any questions, feel free to email me on; 
+
 Email: zahrahhaji10@gmail.com
-linketon: [Click Here](https://www.linkedin.com/in/zahra-haji/)
+
