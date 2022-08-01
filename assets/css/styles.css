@@ -1,0 +1,95 @@
+/* color scheme */
+:root {
+  --light-cornflower-blue: #8ecae6ff;
+  --blue-green: #219ebcff;
+  --prussian-blue: #023047ff;
+  --selective-yellow: #ffb703ff;
+  --tangerine: #fb8500ff;
+  --white: white;
+  --bs-gray-700: #495057;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-800: #343a40;
+  --bs-gray-300: #dee2e6;
+  --black: black;
+  --red: red;
+  --green: green;
+}
+
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+/* navbar styling */
+.home-page-link {
+  margin-right: 30px;
+}
+
+.home-page-link:hover {
+  text-decoration: overline;
+  color: var(--light-cornflower-blue);
+}
+
+/* banner styling */
+.weather-title {
+  color: var(--prussian-blue);
+}
+
+.info {
+  color: var(--bs-gray-700);
+  background-color: var(--bs-gray-300);
+  display: inline-block;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 27px;
+}
+
+/* search area styling*/
+.list-group-item:hover {
+  background-color: var(--bs-gray-500);
+}
+.search-history {
+  color: var(--bs-gray-700);
+}
+
+/* main weather card styling */
+.main-icon-img {
+  height: 100px;
+  width: 100px;
+}
+
+/* weather cards image styling */
+.card-img-top {
+  height: 120px;
+  width: 120px;
+}
+
+.weather-card {
+  width: 14rem;
+}
+
+/* render color based on UVI value  */
+.low {
+  color: var(--green);
+}
+
+.moderate {
+  color: var(--selective-yellow);
+}
+
+.high {
+  color: var(--red);
+}
+
+/* mobile responsive */
+
+@media screen and (max-width: 576px) {
+  .each-forecast-card {
+    width: 100%;
+  }
+
+  .weather-card {
+    width: 100%;
+  }
+}
