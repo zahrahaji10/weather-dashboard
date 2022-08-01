@@ -154,7 +154,6 @@ const renderCurrentDate = (data) => {
 
 //fn to render weather forecast
 const renderWeatherForecast = (data) => {
-  console.log(data);
   // display forecast on page
   const createEachWeatherCard = (each) => {
     const uvIndicatorColor =
@@ -288,7 +287,6 @@ const handleFormSubmit = async (event) => {
   if (cityName) {
     // render weather cards after search
     const validateCityName = await renderWeatherInfo(cityName);
-    console.log(validateCityName);
     if (validateCityName === true) {
       // get searches from LS
       const recentCitySearched = readFromLocalStorage("recentSearches", []);
