@@ -16,8 +16,8 @@ Useful application to help you stay up to date with the weather conditions to pl
 ## Deployed application Links
 
 ```
-GitHub repository: https://zahrahaji10.github.io/weather-dashboard/git
-GitHub url:https://github.com/zahrahaji10/weather-dashboard/tree/dev
+GitHub repository: https://zahrahaji10.github.io/weather-dashboard/
+GitHub url:https://github.com/zahrahaji10/weather-dashboard
 ```
 
 ## Architectural Diagram
@@ -31,6 +31,7 @@ WHEN I search for a city:
 - I am presented with current and future conditions for that city and that city is added to the search history
 - I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
 - I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
+
 
 <img width="986" alt="searched" src="https://user-images.githubusercontent.com/102627226/171294473-9f4ba0ec-9cbe-46cc-9a09-0c6fedc988ec.png">
 
